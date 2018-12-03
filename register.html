@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <title>Login</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" type="text/css" href="/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
+    <script type="text/javascript" src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+
+
+    <!-- <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="/jquery-3.1.1.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script> -->
+
+
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+    <script>
+
+
+
+
+        function sendMe() {
+            evt.preventDefault();
+            try {
+                someBug();
+            } catch (e) {
+                throw new Error(e.message);
+            }
+            return false;
+        }
+
+
+
+        function chkForm() {
+            if (registration.password.value != registration.repass.value) {
+                alert("Password does not match");
+                registration.password.value = "";
+                registration.repass.value = "";
+                registration.password.focus();
+                return false;
+            }
+        }
+    </script>
+    <meta charset="utf-8">
+    <title>Register page</title>
+</head>
+
+<body>
+
+    <div style="margin:80px auto 0;text-align: center;">
+        <img src="logo.jpg" style="width:200px;">
+    </div >
+
+
+
+
+
+
+
+
+
+
+
+<form method="post" name="registration" action="registration.php" onsubmit="return validateemail()" enctype="multipart/form-data">
+
+
+                <div class="form-group">
+                    <label >Username:</label>
+                  <input type="text" name="username" value="" required class="form-control textInput">
+                </div>
+
+                <br>
+
+
+                <div class="form-group">
+                    <label>Email</label>
+                <input type="email" name="email" value="" required class="form-control textInput">
+            </div>
+            <br>
+<div>
+  <label class="sr-only">Gjinia:</label> <br>
+                        <div class="radio">
+                          <label><i class="fa fa-mars" style="font-size:48px;color: rgb(153, 204, 255)"></i> Mashkull 
+                            <input type="radio" name="gjinia" value="male">
+                            </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label><i class="fa fa-venus" style="font-size:48px;color: rgb(153, 204, 255)"></i> Femer 
+                            <input type="radio" name="gjinia" value="female">
+                            </label>
+
+                        </div>
+</div>
+                        <br>
+                <div class="form-group">
+
+                            <label>Datelindja: </label>
+                            <input type="date" name="datelindja" value="" class="form-control textInput">
+                </div>
+                    <div class="form-group">
+                            <label>FjaleKalimi: </label>
+                            <input type="password" name="password" value="" required class="form-control textInput"><br>
+                    </div>
+
+                <div class="form-group">
+                        <label> Perserit Fjalekalimin:</label>
+                            <input type="password" id="repeat_password" name="repass" value="" required class="form-control textInput">
+                </div>
+
+                    <div class="row">
+                    <td> Choose Photo:</td>
+                    <span class="glyphicon glyphicon-picture"></span>
+
+        
+    
+            <input type="file"  class="btn btn-warning" name="foto">
+    </div>
+<div class="row">
+                        <input type="submit" name="submit" value="Rregjistrohu" required onclick="return chkForm()," class="btn btn-success pull-right">
+
+                    </div>
+     </form>
+
+</body>
+
+</html>

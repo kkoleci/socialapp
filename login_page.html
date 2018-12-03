@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<script>
+
+function validateForm() {
+    var x = document.forms["loginfrm"]["username"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+}
+
+$(document).ready(function(){
+    $("input").focus(function(){
+        $(this).css("background-color", "#cccccc");
+    });
+    $("input").blur(function(){
+        $(this).css("background-color", "#ffffff");
+    });
+});
+</script>
+
+    <title>Login</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" type="text/css" href="/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
+    <script type="text/javascript" src="/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div style="margin:10px auto 0;text-align: center;">
+    <a href="http://localhost/Project_Social_Network/home.html"><img src="logo.jpg" style="width:200px;"></a>
+</div>
+<div style="width:900px;margin:40px auto 0;" class="panel panel-default">
+    <div class="panel-body">
+        <form class="" name="loginfrm" action="checklogin.php" method="post">
+            <div class="form-group">
+                <label>Username</label>
+                <input name="username" type="text" class="form-control" required="true">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input name="pass" type="password" class="form-control" required>
+            </div>
+            <div class="row">
+                <input name="submit" type="submit" value="Login" class="btn btn-success pull-right" style="margin-right:10px">
+
+                <a href="register.html"><span class="glyphicon glyphicon-user"></span>Create a new Account</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+</body>
+
+</html>

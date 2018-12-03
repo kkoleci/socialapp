@@ -1,0 +1,117 @@
+<?php
+    session_start();
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+            function sendMe() {
+                evt.preventDefault();
+                try {
+                    someBug();
+                } catch (e) {
+                    throw new Error(e.message);
+                }
+                return false;
+            }
+
+            function checkForm() {
+                if (settings.new.value != settings.renew.value) {
+                    alert("Passwordi i ri ,nuk perputhet me riperseritesin e tij!");
+                    settings.new.value = "";
+                    settings.renew.value = "";
+                  settings.new.focus();
+                    return false;
+                }
+            }
+        </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <style media="screen">
+      body{
+        margin-top:60px;
+      }
+    </style>
+    <title></title>
+  </head>
+  <body>
+
+      <div class="container ">
+        <div class="jumbotron">
+
+
+        <div class="row">
+          <div class="col-xs-12">
+
+
+
+        <ul  class="nav nav-tabs">
+          <li><a href="kryesimi.php"><font size="4">Kryesimi</font></a></li>
+          <li><a href="profili.php"><font size="4">Profili</font></a></li>
+
+          <li style="float: right;"><a href="setting.php"><font size="4">Settings</font></a></li>
+          <li style="float: right;"><a href="logout.php"><font size="4">Log out</font></a></li>
+        </ul>
+        </div>
+        </div>
+        </div>
+      </div>
+
+        <div class="container">
+          <div  class="jumbotron">
+
+          <div class="row">
+            <div class="col-xs-12">
+
+              <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#newpass" name="button">Ndrysho Password</button>
+
+              <div class="modal fade" id="newpass" role="dialog">
+                <div class="modal-dialog">
+
+                <div class="modal-content">
+
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" name="button">&times;</button>
+                  <h4 class="modal-tittle">Plotesoni te dhenat</h4>
+                </div>
+                <div class="modal-body">
+
+
+
+              <form action="ndryshopass.php" onsubmit="return sendMe()" method="post">
+                <div class="form-group">
+                  <label for="">Password i vjeter: </label>
+                  <input type="password" name="old" value="">
+                </div>
+                <div class="form-group">
+                  <label for="">Password i ri: </label>
+                  <input type="password" name="new" value="">
+                </div>
+                  <div class="form-group">
+                    <label for="">Perserit: </label>
+                    <input type="password" name="renew" value="">
+                  </div>
+
+
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal" name="button">Mbyll</button>
+                      <input type="submit" class="btn btn-primary" name="submit" value="Ndrysho"onclick="return checkForm()">
+                  </div>
+                  </form>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+  </body>
+</html>
